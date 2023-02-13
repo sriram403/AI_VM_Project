@@ -41,7 +41,7 @@ while True:
         if fingers[1] == 1 and fingers[2] ==0 :
 
             # convert coordinates
-            x3 = np.interp(x1,(frameR,wCam-frameR),(0,ws))
+            x3 = np.interp(x1,(frameR,wCam-frameR),(0,ws))  #for sensitivity
             y3 = np.interp(y1,(frameR,hCam-frameR),(0,hs))
             
             #smothening
@@ -50,7 +50,7 @@ while True:
             
 
             #move our mouse
-            autopy.mouse.move(ws-clocx,clocy) # for sensitivity of movement within frame (ws-x3,y3)
+            autopy.mouse.move(ws-clocx,clocy) # changing the movement opposite (ws-x3,y3)
             cv2.circle(img,(x1,y1),15,(255,34,0),cv2.FILLED)
             plocy,plocx = clocy,clocx
 
